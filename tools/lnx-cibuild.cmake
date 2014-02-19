@@ -45,7 +45,9 @@ set(CTEST_CMAKE_GENERATOR "Unix Makefiles")
 ctest_start     (Continuous)
 ctest_configure (BUILD "${CTEST_BINARY_DIRECTORY}" RETURN_VALUE _configure_ret)
 ctest_build     (BUILD "${CTEST_BINARY_DIRECTORY}" NUMBER_ERRORS _build_errors)
-ctest_test      (BUILD "${CTEST_BINARY_DIRECTORY}" PARALLEL_LEVEL 3)
+if(NOT $ENV{COVERITY_SCAN_BRANCH} EQUAL 1)
+  ctest_test      (BUILD "${CTEST_BINARY_DIRECTORY}" PARALLEL_LEVEL 3)
+endif()
 ctest_submit()
 
 # indicate errors
