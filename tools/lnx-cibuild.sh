@@ -13,7 +13,7 @@ else
   export BUILD_NAME=$TRAVIS_COMMIT
 fi
 
-ctest -V -S tools/lnx-cibuild.cmake
+ctest -VV -S tools/lnx-cibuild.cmake
 
 # we indicate build failures if ctest experienced any errors
 if [ -f ${SOURCE_DIRECTORY}/failed ]; then
