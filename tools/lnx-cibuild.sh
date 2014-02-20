@@ -5,7 +5,9 @@ export SOURCE_DIRECTORY=`pwd`
 mkdir _build
 
 # define the build name
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+if [ "$COVERITY_SCAN_BRANCH" == "1" ]; then
+  exit 0
+elif [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
   export BUILD_NAME=$TRAVIS_PULL_REQUEST
 elif [[ -n "$TRAVIS_COMMIT_RANGE" ]]; then
   export BUILD_NAME=$TRAVIS_COMMIT_RANGE
