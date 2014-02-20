@@ -2,6 +2,7 @@
 
 # get some infos from git to embed it in the build name
 export SOURCE_DIRECTORY=`pwd`
+export PROJECT_NAME=OpenMS/OpenMS
 mkdir _build
 
 # define the build name
