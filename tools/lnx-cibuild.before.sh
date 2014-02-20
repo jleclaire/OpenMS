@@ -1,8 +1,13 @@
 #!/bin/bash
 
-# fetch contrib and build seqan
+# fetch contrib and build seqan+gsl
+cd ..
 git clone https://github.com/OpenMS/contrib.git
 cd contrib
+# store contrib dir for later usage
+export CONTRIB_DIR=`pwd`
+
+# build seqan from contrib
 cmake . -DBUILD_TYPE=SEQAN
 # we build the gsl as the one installed with this ubuntu version
 # conflicts with OpenMS
