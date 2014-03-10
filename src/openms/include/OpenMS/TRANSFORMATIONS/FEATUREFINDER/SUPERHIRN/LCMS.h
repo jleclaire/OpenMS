@@ -194,7 +194,6 @@ public:
         IN->set_feature_ID((int) feature_list.size());
       }
       feature_list.push_back(*IN);
-      IN = NULL;
     }
 
     // remove a feature from the LC/MS run by ID:
