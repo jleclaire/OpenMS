@@ -101,8 +101,11 @@ START_SECTION((void setInitialParameters(const GaussFitResult& result)))
 {
   GaussFitter f1;
   GaussFitter::GaussFitResult result;
+  result.A = 5;
+  result.x0 = 15;
+  result.sigma = 20;
   f1.setInitialParameters(result);
-	
+
 	NOT_TESTABLE //implicitly tested in fit method
 }
 END_SECTION
