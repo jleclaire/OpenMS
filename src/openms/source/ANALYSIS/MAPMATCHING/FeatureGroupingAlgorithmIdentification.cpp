@@ -543,6 +543,11 @@ namespace OpenMS
         ++abs;
         num_mean += iterin->pep_rt;
       }
+      if (abs < 2)
+      {
+        // TODO throw?
+      }
+
       DoubleReal mean = num_mean / (DoubleReal) abs;
       DoubleReal num_std = 0.0;
       for (std::vector<PepHit>::iterator iterin = (*iterout).begin(); iterin != (*iterout).end(); ++iterin)
