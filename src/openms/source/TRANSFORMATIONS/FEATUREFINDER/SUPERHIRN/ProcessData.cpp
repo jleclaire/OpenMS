@@ -736,7 +736,7 @@ namespace OpenMS
     // save in a new data structure
     data_->add_LC_elution_peak(this_MZ, tmp);
 
-    tmp = NULL;
+    delete tmp;
   }
 
 ///////////////////////////////////////////////////////////////////////////////
