@@ -475,6 +475,11 @@ protected:
         target_plus_decoy_peptides += msd->number_of_target_plus_decoy;
         exp_peps += msd->peptides.size();
       }
+      if (target_peptides == 0)
+      {
+        // TODO throw?
+      }
+
       Real fdr1 = (float)decoy_peptides / (float)(target_peptides + target_plus_decoy_peptides);
       Real fdr2 = (float)(decoy_peptides + target_plus_decoy_peptides) / (float)target_peptides;
       out << "Number of target peptides:" << target_peptides << endl;
